@@ -6,7 +6,7 @@ import (
 	"os"
 	"syscall"
 
-	"github.com/iyaozhen/samber-do-learn/service"
+	"github.com/iyaozhen/samber-do-learn/service/airplane"
 	"github.com/iyaozhen/samber-do-learn/service/car"
 	"github.com/samber/do/v2"
 )
@@ -15,7 +15,8 @@ func main() {
 	// create DI container and inject package services
 	injector := do.New()
 
-	service.Package(injector)
+	car.Package(injector)
+	airplane.Package(injector)
 	//do.ProvideValue(&Config{
 	//	Port: 4242,
 	//})

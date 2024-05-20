@@ -3,7 +3,6 @@ package car
 import (
 	"testing"
 
-	"github.com/iyaozhen/samber-do-learn/service"
 	"github.com/iyaozhen/samber-do-learn/service/engine"
 	"github.com/samber/do/v2"
 	"github.com/stretchr/testify/assert"
@@ -11,7 +10,7 @@ import (
 
 func TestCar_Start_V1(t *testing.T) {
 	injector := do.New()
-	service.Package(injector)
+	Package(injector)
 
 	car, err := do.Invoke[*Car](injector)
 	assert.NoError(t, err)
